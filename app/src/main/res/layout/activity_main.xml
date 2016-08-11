@@ -11,6 +11,7 @@
     tools:context="com.davemachado.courtcounter.MainActivity">
 
     <LinearLayout
+        android:id="@+id/scores_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -124,12 +125,61 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/reset_scores_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="12dp"
+        android:layout_below="@id/scores_linear_layout"
         android:onClick="resetScores"
-        android:text="Reset"/>
+        android:text="Reset Scores"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_below="@id/reset_scores_button"
+        android:layout_marginTop="24dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        />
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:text="@string/start_time"
+        android:textColor="#1c1c1c"
+        android:textSize="40sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_weight="1"
+            android:text="@string/start" />
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/start"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:text="@string/reset" />
+        </LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>
